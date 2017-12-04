@@ -10,17 +10,22 @@ class HomesViewModel: HomesViewModeling {
     // MARK: - Properties
     
     private let manager: HomesManager
+    private var homeNames = [String]()
     
     // MARK: - Life cycle
     
     init(manager: HomesManager) {
         self.manager = manager
+        
+        self.manager.tmp_onUpdateHomes = {
+            [weak self] in
+            self?.homeNames = manager.homes.map({ $0.name })
+        }
     }
     
     // MARK: - HomesViewModeling
     
     var items: [String] {
-        let str = "Fusce Fringilla Dapibus Lorem Purus"
-        return str.components(separatedBy: " ")
+        return homeNames
     }
 }
