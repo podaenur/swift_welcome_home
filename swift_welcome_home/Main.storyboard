@@ -10,17 +10,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Homes Controller-->
         <scene sceneID="C2A-wa-eOq">
             <objects>
-                <viewController id="phh-dT-HKv" sceneMemberID="viewController">
+                <viewController id="phh-dT-HKv" customClass="HomesController" customModule="swift_welcome_home" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kav-Rt-Dso">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mw4-W1-Ckg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="wuN-B9-jsn" detailTextLabel="VwW-9U-zU7" style="IBUITableViewCellStyleSubtitle" id="8bD-B1-OAj">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8bD-B1-OAj" id="mq7-tP-bpz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wuN-B9-jsn">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VwW-9U-zU7">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nws-mR-Hgb" firstAttribute="trailing" secondItem="Mw4-W1-Ckg" secondAttribute="trailing" id="Bns-ER-Fxh"/>
+                            <constraint firstItem="Mw4-W1-Ckg" firstAttribute="top" secondItem="Kav-Rt-Dso" secondAttribute="top" constant="64" id="McQ-8a-3kQ"/>
+                            <constraint firstItem="Mw4-W1-Ckg" firstAttribute="leading" secondItem="nws-mR-Hgb" secondAttribute="leading" id="Ngr-GS-dro"/>
+                            <constraint firstItem="nws-mR-Hgb" firstAttribute="bottom" secondItem="Mw4-W1-Ckg" secondAttribute="bottom" id="V3a-gH-PxV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nws-mR-Hgb"/>
                     </view>
                     <navigationItem key="navigationItem" id="MK4-Hd-hv3"/>
+                    <connections>
+                        <outlet property="tableView" destination="Mw4-W1-Ckg" id="bZ8-Ig-w3N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rch-5l-KfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
