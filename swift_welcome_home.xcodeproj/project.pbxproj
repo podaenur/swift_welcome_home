@@ -12,6 +12,7 @@
 		EAF788841FD5D10D006BCD95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF788821FD5D10D006BCD95 /* LaunchScreen.storyboard */; };
 		EAF7888D1FD5D229006BCD95 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EAF7888B1FD5D229006BCD95 /* Release.xcconfig */; };
 		EAF7888E1FD5D229006BCD95 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EAF7888C1FD5D229006BCD95 /* Debug.xcconfig */; };
+		EAF788911FD5D313006BCD95 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF788901FD5D313006BCD95 /* HomeKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		EAF788851FD5D10D006BCD95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAF7888B1FD5D229006BCD95 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		EAF7888C1FD5D229006BCD95 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		EAF788901FD5D313006BCD95 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		EAF788921FD5D313006BCD95 /* swift_welcome_home.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = swift_welcome_home.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF788911FD5D313006BCD95 /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				EAF788781FD5D10D006BCD95 /* swift_welcome_home */,
 				EAF788771FD5D10D006BCD95 /* Products */,
+				EAF7888F1FD5D313006BCD95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +59,7 @@
 		EAF788781FD5D10D006BCD95 /* swift_welcome_home */ = {
 			isa = PBXGroup;
 			children = (
+				EAF788921FD5D313006BCD95 /* swift_welcome_home.entitlements */,
 				EAF788791FD5D10D006BCD95 /* AppDelegate.swift */,
 				EAF788801FD5D10D006BCD95 /* Assets.xcassets */,
 				EAF788821FD5D10D006BCD95 /* LaunchScreen.storyboard */,
@@ -62,6 +68,14 @@
 				EAF7888B1FD5D229006BCD95 /* Release.xcconfig */,
 			);
 			path = swift_welcome_home;
+			sourceTree = "<group>";
+		};
+		EAF7888F1FD5D313006BCD95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAF788901FD5D313006BCD95 /* HomeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +111,11 @@
 					EAF788751FD5D10D006BCD95 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -267,6 +286,7 @@
 			baseConfigurationReference = EAF7888C1FD5D229006BCD95 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = swift_welcome_home/swift_welcome_home.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UGFFRZX2C8;
 				INFOPLIST_FILE = swift_welcome_home/Info.plist;
@@ -284,6 +304,7 @@
 			baseConfigurationReference = EAF7888B1FD5D229006BCD95 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = swift_welcome_home/swift_welcome_home.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UGFFRZX2C8;
 				INFOPLIST_FILE = swift_welcome_home/Info.plist;
