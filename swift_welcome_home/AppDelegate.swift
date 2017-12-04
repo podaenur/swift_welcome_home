@@ -11,12 +11,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private var manager: HomesManager?
     
+    // MARK: - Setup
+    
+    private func setupWindow(rootController: UIViewController) {
+        let _window = UIWindow(frame: UIScreen.main.bounds)
+        _window.rootViewController = rootController
+        _window.makeKeyAndVisible()
+        window = _window
+    }
+    
+    private func setupHomesManager() {
+        let _manager = HomesManager()
+        _manager.activate()
+        manager = _manager
+    }
+    
     // MARK: - UIApplicationDelegate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        manager = HomesManager()
-        manager!.activate()
+        setupWindow(rootController: ScreensFactory.homesController())
+        setupHomesManager()
         
         return true
     }
