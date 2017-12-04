@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EAF7887A1FD5D10D006BCD95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF788791FD5D10D006BCD95 /* AppDelegate.swift */; };
-		EAF7887C1FD5D10D006BCD95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF7887B1FD5D10D006BCD95 /* ViewController.swift */; };
-		EAF7887F1FD5D10D006BCD95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF7887D1FD5D10D006BCD95 /* Main.storyboard */; };
 		EAF788811FD5D10D006BCD95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF788801FD5D10D006BCD95 /* Assets.xcassets */; };
 		EAF788841FD5D10D006BCD95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF788821FD5D10D006BCD95 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -17,8 +15,6 @@
 /* Begin PBXFileReference section */
 		EAF788761FD5D10D006BCD95 /* swift_welcome_home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_welcome_home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF788791FD5D10D006BCD95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAF7887B1FD5D10D006BCD95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EAF7887E1FD5D10D006BCD95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAF788801FD5D10D006BCD95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAF788831FD5D10D006BCD95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAF788851FD5D10D006BCD95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,8 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				EAF788791FD5D10D006BCD95 /* AppDelegate.swift */,
-				EAF7887B1FD5D10D006BCD95 /* ViewController.swift */,
-				EAF7887D1FD5D10D006BCD95 /* Main.storyboard */,
 				EAF788801FD5D10D006BCD95 /* Assets.xcassets */,
 				EAF788821FD5D10D006BCD95 /* LaunchScreen.storyboard */,
 				EAF788851FD5D10D006BCD95 /* Info.plist */,
@@ -125,7 +119,6 @@
 			files = (
 				EAF788841FD5D10D006BCD95 /* LaunchScreen.storyboard in Resources */,
 				EAF788811FD5D10D006BCD95 /* Assets.xcassets in Resources */,
-				EAF7887F1FD5D10D006BCD95 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +129,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAF7887C1FD5D10D006BCD95 /* ViewController.swift in Sources */,
 				EAF7887A1FD5D10D006BCD95 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,14 +136,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EAF7887D1FD5D10D006BCD95 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAF7887E1FD5D10D006BCD95 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EAF788821FD5D10D006BCD95 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -211,7 +195,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -262,7 +246,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -277,6 +261,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UGFFRZX2C8;
 				INFOPLIST_FILE = swift_welcome_home/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhurov.swift-welcome-home";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +277,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UGFFRZX2C8;
 				INFOPLIST_FILE = swift_welcome_home/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhurov.swift-welcome-home";
 				PRODUCT_NAME = "$(TARGET_NAME)";
