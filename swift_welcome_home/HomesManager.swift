@@ -10,6 +10,9 @@ class HomesManager: NSObject, HMHomeManagerDelegate {
     // MARK: - Properties
     
     private let innerManager = HMHomeManager()
+    private(set) var homes = [HMHome]()
+    
+    var tmp_onUpdateHomes: (() -> Void)?
     
     // MARK: - Life cycle
     
@@ -18,18 +21,30 @@ class HomesManager: NSObject, HMHomeManagerDelegate {
         self.innerManager.delegate = self
     }
     
+    // MARK: - Private
+    
+    private func onUpdateHomes() {
+        tmp_onUpdateHomes?()
+    }
+    
     // MARK: - HMHomeManagerDelegate
     
     func homeManager(_ manager: HMHomeManager, didAdd home: HMHome) {
         print(#function)
+        homes = manager.homes
+        onUpdateHomes()
     }
     
     func homeManager(_ manager: HMHomeManager, didRemove home: HMHome) {
         print(#function)
+        homes = manager.homes
+        onUpdateHomes()
     }
     
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
         print(#function)
+        homes = manager.homes
+        onUpdateHomes()
     }
     
     func homeManagerDidUpdatePrimaryHome(_ manager: HMHomeManager) {
