@@ -11,10 +11,11 @@ class HomesManager: NSObject, HMHomeManagerDelegate {
     
     private let innerManager = HMHomeManager()
     
-    // MARK: - Public
+    // MARK: - Life cycle
     
-    func activate() {
-        innerManager.delegate = self
+    override init() {
+        super.init()
+        self.innerManager.delegate = self
     }
     
     // MARK: - HMHomeManagerDelegate
