@@ -9,7 +9,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    private var manager: HomesManager?
     
     // MARK: - Setup
     
@@ -20,18 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = _window
     }
     
-    private func setupHomesManager() {
-        let _manager = HomesManager()
-        _manager.activate()
-        manager = _manager
-    }
-    
     // MARK: - UIApplicationDelegate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        setupWindow(rootController: ScreensFactory.homesController())
-        setupHomesManager()
+        setupWindow(rootController: ScreensFactory.homesController(manager: HomesManager()))
         
         return true
     }

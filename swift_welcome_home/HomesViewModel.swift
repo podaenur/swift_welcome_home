@@ -7,6 +7,16 @@ import Foundation
 
 class HomesViewModel: HomesViewModeling {
     
+    // MARK: - Properties
+    
+    private let manager: HomesManager
+    
+    // MARK: - Life cycle
+    
+    init(manager: HomesManager) {
+        self.manager = manager
+    }
+    
     // MARK: - HomesViewModeling
     
     var items: [String] {

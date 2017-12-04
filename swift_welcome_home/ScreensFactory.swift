@@ -6,12 +6,12 @@
 import UIKit
 
 struct ScreensFactory {
-    static func homesController() -> UIViewController {
+    static func homesController(manager: HomesManager) -> UIViewController {
         let controller = UIStoryboard.wh_main.instantiateInitialViewController()
         guard let navigationController = controller as? UINavigationController,
             let homesController = navigationController.viewControllers.first as? HomesController else { fatalError() }
         
-        let viewModel = HomesViewModel()
+        let viewModel = HomesViewModel(manager: manager)
         homesController.viewModel = viewModel
         return homesController
     }
