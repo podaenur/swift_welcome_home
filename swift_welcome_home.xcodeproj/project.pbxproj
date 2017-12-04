@@ -10,6 +10,8 @@
 		EAF7887A1FD5D10D006BCD95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF788791FD5D10D006BCD95 /* AppDelegate.swift */; };
 		EAF788811FD5D10D006BCD95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF788801FD5D10D006BCD95 /* Assets.xcassets */; };
 		EAF788841FD5D10D006BCD95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF788821FD5D10D006BCD95 /* LaunchScreen.storyboard */; };
+		EAF7888D1FD5D229006BCD95 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EAF7888B1FD5D229006BCD95 /* Release.xcconfig */; };
+		EAF7888E1FD5D229006BCD95 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EAF7888C1FD5D229006BCD95 /* Debug.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		EAF788801FD5D10D006BCD95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAF788831FD5D10D006BCD95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAF788851FD5D10D006BCD95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF7888B1FD5D229006BCD95 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		EAF7888C1FD5D229006BCD95 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 				EAF788801FD5D10D006BCD95 /* Assets.xcassets */,
 				EAF788821FD5D10D006BCD95 /* LaunchScreen.storyboard */,
 				EAF788851FD5D10D006BCD95 /* Info.plist */,
+				EAF7888C1FD5D229006BCD95 /* Debug.xcconfig */,
+				EAF7888B1FD5D229006BCD95 /* Release.xcconfig */,
 			);
 			path = swift_welcome_home;
 			sourceTree = "<group>";
@@ -117,8 +123,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF7888E1FD5D229006BCD95 /* Debug.xcconfig in Resources */,
 				EAF788841FD5D10D006BCD95 /* LaunchScreen.storyboard in Resources */,
 				EAF788811FD5D10D006BCD95 /* Assets.xcassets in Resources */,
+				EAF7888D1FD5D229006BCD95 /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +264,7 @@
 		};
 		EAF788891FD5D10D006BCD95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAF7888C1FD5D229006BCD95 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -272,6 +281,7 @@
 		};
 		EAF7888A1FD5D10D006BCD95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAF7888B1FD5D229006BCD95 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
