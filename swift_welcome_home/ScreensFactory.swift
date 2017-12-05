@@ -11,8 +11,7 @@ struct ScreensFactory {
         guard let navigationController = controller as? UINavigationController,
             let homesController = navigationController.viewControllers.first as? HomesController else { fatalError() }
         
-        let viewModel = HomesViewModel(manager: manager)
-        homesController.viewModel = viewModel
-        return homesController
+        homesController.manager = manager
+        return navigationController
     }
 }
