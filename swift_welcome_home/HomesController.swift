@@ -121,13 +121,13 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
         let home = homeNames[indexPath.row]
         
         let updatePrimary = UITableViewRowAction(style: .normal, title: "Set primary") {
-            [weak self] (_, _) in
-            self?.manager?.setHomeAsPrimary(name: home.name)
+            (_, _) in
+            self.manager?.setHomeAsPrimary(at: indexPath)
         }
         
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Remove") {
-            [weak self] (_, _) in
-            self?.manager?.removeHome(name: home.name)
+            (_, _) in
+            self.manager?.removeHome(at: indexPath)
         }
         
         return home.isPrimary ? [deleteAction] : [deleteAction, updatePrimary]

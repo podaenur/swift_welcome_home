@@ -40,9 +40,8 @@ class HomesManager: NSObject, HMHomeManagerDelegate {
         }
     }
     
-    func setHomeAsPrimary(name: String) {
-        let home = homes.first { $0.name.contains(name) }
-        guard let toPrimary = home else { return }
+    func setHomeAsPrimary(at indexPath: IndexPath) {
+        let toPrimary = homes[indexPath.row]
         
         innerManager.updatePrimaryHome(toPrimary) {
             [weak self] (error) in
@@ -56,9 +55,9 @@ class HomesManager: NSObject, HMHomeManagerDelegate {
         }
     }
     
-    func removeHome(name: String) {
-        let first = homes.first { $0.name.lowercased().contains(name.lowercased()) }
-        guard let toDelete = first else { return }
+    func removeHome(at indexPath: IndexPath) {
+        let toDelete = homes[indexPath.row]
+        
         innerManager.removeHome(toDelete) {
             [weak self] (error) in
             if let _error = error {
