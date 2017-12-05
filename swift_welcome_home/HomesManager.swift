@@ -74,22 +74,18 @@ class HomesManager: NSObject, HMHomeManagerDelegate {
     // MARK: - HMHomeManagerDelegate
     
     func homeManager(_ manager: HMHomeManager, didAdd home: HMHome) {
-        print(#function)
         onUpdateHomes?()
     }
     
     func homeManager(_ manager: HMHomeManager, didRemove home: HMHome) {
-        print(#function)
         onUpdateHomes?()
     }
     
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
-        print(#function)
         onUpdateHomes?()
     }
     
     func homeManagerDidUpdatePrimaryHome(_ manager: HMHomeManager) {
-        print(#function)
         onUpdateHomes?()
     }
 }
