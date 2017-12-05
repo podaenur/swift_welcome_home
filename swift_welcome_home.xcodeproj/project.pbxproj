@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA13A6771FD7301B00F88F03 /* Default.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EA13A6761FD7301B00F88F03 /* Default.xcconfig */; };
 		EAB60F241FD5D81B00BD8A00 /* HomesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB60F231FD5D81B00BD8A00 /* HomesManager.swift */; };
 		EAB60F261FD5E28C00BD8A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB60F251FD5E28C00BD8A00 /* Main.storyboard */; };
 		EAB60F281FD5E38B00BD8A00 /* HomesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB60F271FD5E38B00BD8A00 /* HomesController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA13A6761FD7301B00F88F03 /* Default.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Default.xcconfig; sourceTree = "<group>"; };
 		EAB60F231FD5D81B00BD8A00 /* HomesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomesManager.swift; sourceTree = "<group>"; };
 		EAB60F251FD5E28C00BD8A00 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EAB60F271FD5E38B00BD8A00 /* HomesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomesController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				EAF788821FD5D10D006BCD95 /* LaunchScreen.storyboard */,
 				EAB60F251FD5E28C00BD8A00 /* Main.storyboard */,
 				EAF788851FD5D10D006BCD95 /* Info.plist */,
+				EA13A6761FD7301B00F88F03 /* Default.xcconfig */,
 				EAF7888C1FD5D229006BCD95 /* Debug.xcconfig */,
 				EAF7888B1FD5D229006BCD95 /* Release.xcconfig */,
 			);
@@ -159,6 +162,7 @@
 			files = (
 				EAF7888E1FD5D229006BCD95 /* Debug.xcconfig in Resources */,
 				EAB60F261FD5E28C00BD8A00 /* Main.storyboard in Resources */,
+				EA13A6771FD7301B00F88F03 /* Default.xcconfig in Resources */,
 				EAF788841FD5D10D006BCD95 /* LaunchScreen.storyboard in Resources */,
 				EAF788811FD5D10D006BCD95 /* Assets.xcassets in Resources */,
 				EAF7888D1FD5D229006BCD95 /* Release.xcconfig in Resources */,
