@@ -11,7 +11,6 @@
 		EAB60F261FD5E28C00BD8A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB60F251FD5E28C00BD8A00 /* Main.storyboard */; };
 		EAB60F281FD5E38B00BD8A00 /* HomesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB60F271FD5E38B00BD8A00 /* HomesController.swift */; };
 		EAB60F2A1FD5E60200BD8A00 /* UIStoryboard+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB60F291FD5E60200BD8A00 /* UIStoryboard+Helper.swift */; };
-		EAB60F2C1FD5E7AF00BD8A00 /* HomesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB60F2B1FD5E7AF00BD8A00 /* HomesViewModel.swift */; };
 		EAB60F2E1FD5E91000BD8A00 /* ScreensFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB60F2D1FD5E91000BD8A00 /* ScreensFactory.swift */; };
 		EAF7887A1FD5D10D006BCD95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF788791FD5D10D006BCD95 /* AppDelegate.swift */; };
 		EAF788811FD5D10D006BCD95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF788801FD5D10D006BCD95 /* Assets.xcassets */; };
@@ -26,7 +25,6 @@
 		EAB60F251FD5E28C00BD8A00 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EAB60F271FD5E38B00BD8A00 /* HomesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomesController.swift; sourceTree = "<group>"; };
 		EAB60F291FD5E60200BD8A00 /* UIStoryboard+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Helper.swift"; sourceTree = "<group>"; };
-		EAB60F2B1FD5E7AF00BD8A00 /* HomesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomesViewModel.swift; sourceTree = "<group>"; };
 		EAB60F2D1FD5E91000BD8A00 /* ScreensFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensFactory.swift; sourceTree = "<group>"; };
 		EAF788761FD5D10D006BCD95 /* swift_welcome_home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_welcome_home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF788791FD5D10D006BCD95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 				EAF788791FD5D10D006BCD95 /* AppDelegate.swift */,
 				EAB60F271FD5E38B00BD8A00 /* HomesController.swift */,
 				EAB60F2D1FD5E91000BD8A00 /* ScreensFactory.swift */,
-				EAB60F2B1FD5E7AF00BD8A00 /* HomesViewModel.swift */,
 				EAB60F231FD5D81B00BD8A00 /* HomesManager.swift */,
 				EAB60F291FD5E60200BD8A00 /* UIStoryboard+Helper.swift */,
 				EAF788801FD5D10D006BCD95 /* Assets.xcassets */,
@@ -177,7 +174,6 @@
 			files = (
 				EAB60F2E1FD5E91000BD8A00 /* ScreensFactory.swift in Sources */,
 				EAB60F241FD5D81B00BD8A00 /* HomesManager.swift in Sources */,
-				EAB60F2C1FD5E7AF00BD8A00 /* HomesViewModel.swift in Sources */,
 				EAB60F281FD5E38B00BD8A00 /* HomesController.swift in Sources */,
 				EAB60F2A1FD5E60200BD8A00 /* UIStoryboard+Helper.swift in Sources */,
 				EAF7887A1FD5D10D006BCD95 /* AppDelegate.swift in Sources */,

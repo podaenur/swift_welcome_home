@@ -5,10 +5,6 @@
 
 import UIKit
 
-protocol HomesViewModeling {
-    var items: [String] { get }
-}
-
 class HomesController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Definitions
@@ -23,7 +19,12 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // MARK: - Properties
     
-    var viewModel: HomesViewModeling!
+    private var homeNames = [HomesControllerHome]()
+    var manager: HomesManager? {
+        didSet {
+            bindManager()
+        }
+    }
     
     // MARK: - Life cycle
     
@@ -42,6 +43,12 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
         table.rowHeight = UITableViewAutomaticDimension
     }
     
+    private func bindManager() {
+        manager?.onUpdateHomes = {
+            [weak self] in
+        }
+    }
+    
     // MARK: - Private
     
     private func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
@@ -52,7 +59,7 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.items.count
+        return homeNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
