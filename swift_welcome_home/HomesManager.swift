@@ -10,9 +10,11 @@ class HomesManager: NSObject, HMHomeManagerDelegate {
     // MARK: - Properties
     
     private let innerManager = HMHomeManager()
-    private(set) var homes = [HMHome]()
+    var homes: [HMHome] {
+        return innerManager.homes
+    }
     
-    var tmp_onUpdateHomes: (() -> Void)?
+    var onUpdateHomes: (() -> Void)?
     
     // MARK: - Life cycle
     
@@ -21,33 +23,73 @@ class HomesManager: NSObject, HMHomeManagerDelegate {
         self.innerManager.delegate = self
     }
     
-    // MARK: - Private
+    // MARK: - Public
     
-    private func onUpdateHomes() {
-        tmp_onUpdateHomes?()
+    func addHome(name: String) {
+        precondition(!name.isEmpty)
+        
+        innerManager.addHome(withName: name) {
+            [weak self] (_, error) in
+            if let _error = error {
+                print(_error)
+            } else {
+                guard let sSelf = self else { return }
+                
+                sSelf.onUpdateHomes?()
+            }
+        }
+    }
+    
+    func setHomeAsPrimary(name: String) {
+        let home = homes.first { $0.name.contains(name) }
+        guard let toPrimary = home else { return }
+        
+        innerManager.updatePrimaryHome(toPrimary) {
+            [weak self] (error) in
+            if let _error = error {
+                print(_error)
+            } else {
+                guard let sSelf = self else { return }
+                
+                sSelf.onUpdateHomes?()
+            }
+        }
+    }
+    
+    func removeHome(name: String) {
+        let first = homes.first { $0.name.lowercased().contains(name.lowercased()) }
+        guard let toDelete = first else { return }
+        innerManager.removeHome(toDelete) {
+            [weak self] (error) in
+            if let _error = error {
+                print(_error)
+            } else {
+                guard let sSelf = self else { return }
+                
+                sSelf.onUpdateHomes?()
+            }
+        }
     }
     
     // MARK: - HMHomeManagerDelegate
     
     func homeManager(_ manager: HMHomeManager, didAdd home: HMHome) {
         print(#function)
-        homes = manager.homes
-        onUpdateHomes()
+        onUpdateHomes?()
     }
     
     func homeManager(_ manager: HMHomeManager, didRemove home: HMHome) {
         print(#function)
-        homes = manager.homes
-        onUpdateHomes()
+        onUpdateHomes?()
     }
     
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
         print(#function)
-        homes = manager.homes
-        onUpdateHomes()
+        onUpdateHomes?()
     }
     
     func homeManagerDidUpdatePrimaryHome(_ manager: HMHomeManager) {
         print(#function)
+        onUpdateHomes?()
     }
 }

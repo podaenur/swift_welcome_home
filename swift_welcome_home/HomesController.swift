@@ -13,6 +13,8 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
         static let homesCellIdent = "cell"
     }
     
+    typealias HomesControllerHome = (name: String, isPrimary: Bool)
+    
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -36,11 +38,37 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
         updateEmptyStateUI()
     }
     
+    // MARK: - Actions
+    
+    @IBAction func onAddNew(_ sender: Any) {
+        let controller = UIAlertController(title: "New home", message: "Enter name of new home", preferredStyle: .alert)
+        
+        controller.addTextField {
+            (textField) in
+            textField.placeholder = "Enter home name"
+        }
+        
+        let save = UIAlertAction(title: "Save home", style: .default) {
+            [weak self] (_) in
+            guard let name = controller.textFields?.first?.text else {
+                print("Empty name handling here...")
+                return
+            }
+            self?.manager?.addHome(name: name)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        controller.addAction(save)
+        controller.addAction(cancel)
+        
+        present(controller, animated: true)
+    }
+    
     // MARK: - Setup
     
     private func setup(_ table: UITableView) {
         table.dataSource = self
-        //  table.delegate = self
+        table.delegate = self
         
         table.rowHeight = UITableViewAutomaticDimension
     }
@@ -48,14 +76,21 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
     private func bindManager() {
         manager?.onUpdateHomes = {
             [weak self] in
+            guard let sSelf = self else { return }
+            
+            guard let _manager = sSelf.manager else { return }
+            sSelf.homeNames = _manager.homes.map({ ($0.name, $0.isPrimary) })
+            sSelf.tableView.reloadData()
+            sSelf.updateEmptyStateUI()
         }
     }
     
     // MARK: - Private
     
     private func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
-        let model = viewModel.items[indexPath.row]
-        cell.textLabel?.text = model
+        let model = homeNames[indexPath.row]
+        cell.textLabel?.text = model.name
+        cell.detailTextLabel?.text = model.isPrimary ? "Primary" : nil
     }
     
     private func updateEmptyStateUI() {
@@ -78,5 +113,23 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // MARK: - UITableViewDelegate
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let home = homeNames[indexPath.row]
+        
+        let updatePrimary = UITableViewRowAction(style: .normal, title: "Set primary") {
+            [weak self] (_, _) in
+            self?.manager?.setHomeAsPrimary(name: home.name)
+        }
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Remove") {
+            [weak self] (_, _) in
+            self?.manager?.removeHome(name: home.name)
+        }
+        
+        return home.isPrimary ? [deleteAction] : [deleteAction, updatePrimary]
+    }
 }
