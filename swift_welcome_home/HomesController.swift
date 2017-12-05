@@ -16,6 +16,7 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noHomesLabel: UILabel!
     
     // MARK: - Properties
     
@@ -32,6 +33,7 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
         super.viewDidLoad()
         
         setup(tableView)
+        updateEmptyStateUI()
     }
     
     // MARK: - Setup
@@ -54,6 +56,12 @@ class HomesController: UIViewController, UITableViewDataSource, UITableViewDeleg
     private func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
         let model = viewModel.items[indexPath.row]
         cell.textLabel?.text = model
+    }
+    
+    private func updateEmptyStateUI() {
+        let hasData = homeNames.count > 0
+        tableView.isHidden = !hasData
+        noHomesLabel.isHidden = hasData
     }
     
     // MARK: - UITableViewDataSource
